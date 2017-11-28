@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VKProgreePie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQx-fq-upD" customClass="RadialProgressView" customModule="VKProgreePie" customModuleProvider="target">
+                                <rect key="frame" x="30" y="80" width="315" height="315"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kQx-fq-upD" secondAttribute="height" id="bFU-r9-m8L"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="ringProgress">
+                                        <real key="value" value="56"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
+                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="ringThickness">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="ringColor">
+                                        <color key="value" red="0.62042845609999997" green="0.72256241909999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showPercentage" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="percentagePosition">
+                                        <real key="value" value="176"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="percentageColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="steve"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showBackgroundImage" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="56" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="RTV-je-QWl">
+                                <rect key="frame" x="28" y="425" width="319" height="31"/>
+                                <connections>
+                                    <action selector="percentSliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="l2q-0G-k17"/>
+                                </connections>
+                            </slider>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ulN-L0-6Yw">
+                                <rect key="frame" x="30" y="467" width="315.5" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Background Image?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1b-jp-YZL">
+                                        <rect key="frame" x="0.0" y="0.0" width="266.5" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BxK-W9-yjk">
+                                        <rect key="frame" x="266.5" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="showImageClicked:" destination="BYZ-38-t0r" eventType="valueChanged" id="SZp-kV-QY6"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vW9-we-vxe">
+                                <rect key="frame" x="30" y="510" width="315" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Percent Text?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gB2-Z0-9kg">
+                                        <rect key="frame" x="0.0" y="0.0" width="266" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kZi-2X-eke">
+                                        <rect key="frame" x="266" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="showPercentSwitchClicked:" destination="BYZ-38-t0r" eventType="valueChanged" id="u3F-aI-Z9H"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="vW9-we-vxe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4OA-Qv-y7S"/>
+                            <constraint firstItem="vW9-we-vxe" firstAttribute="leading" secondItem="ulN-L0-6Yw" secondAttribute="leading" id="6M6-P5-NMW"/>
+                            <constraint firstItem="kQx-fq-upD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="AyV-Kk-tRo"/>
+                            <constraint firstItem="kQx-fq-upD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="B50-pM-ClG"/>
+                            <constraint firstItem="vW9-we-vxe" firstAttribute="top" secondItem="ulN-L0-6Yw" secondAttribute="bottom" constant="12" id="L4K-L7-Ec6"/>
+                            <constraint firstItem="RTV-je-QWl" firstAttribute="leading" secondItem="kQx-fq-upD" secondAttribute="leading" id="Uic-GC-sZN"/>
+                            <constraint firstItem="kQx-fq-upD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gxt-Nc-lOx"/>
+                            <constraint firstItem="ulN-L0-6Yw" firstAttribute="top" secondItem="RTV-je-QWl" secondAttribute="bottom" constant="12" id="n3e-TA-4f1"/>
+                            <constraint firstItem="ulN-L0-6Yw" firstAttribute="leading" secondItem="RTV-je-QWl" secondAttribute="leading" id="oMM-j5-lJz"/>
+                            <constraint firstItem="ulN-L0-6Yw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tRI-cq-aZ2"/>
+                            <constraint firstItem="RTV-je-QWl" firstAttribute="top" secondItem="kQx-fq-upD" secondAttribute="bottom" constant="30" id="xvS-Va-yIw"/>
+                            <constraint firstItem="RTV-je-QWl" firstAttribute="centerX" secondItem="kQx-fq-upD" secondAttribute="centerX" id="y0A-kS-B9K"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="percentageSlider" destination="RTV-je-QWl" id="9yT-fF-uk9"/>
+                        <outlet property="radialView" destination="kQx-fq-upD" id="GPJ-Ln-us9"/>
+                        <outlet property="showImageSwitch" destination="BxK-W9-yjk" id="Iwp-XB-epN"/>
+                        <outlet property="showPercentSwitch" destination="kZi-2X-eke" id="sMb-Na-Vcc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44" y="33.733133433283363"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="steve" width="150" height="150"/>
+    </resources>
+</document>
